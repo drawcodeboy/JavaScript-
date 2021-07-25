@@ -89,6 +89,7 @@ const ellie3 = ellie1;
 console.log(ellie1 == ellie2);//각각 다른 reference에 저장되어있기 때문에 다르다. false
 console.log(ellie1 === ellie2);//똑같은 type이든 아니든 reference가 다르기 때문에 false
 console.log(ellie1 == ellie3);//ellie3는 ellie1의 reference를 그대로 가져왔기 때문이다. true
+console.log(ellie1 === ellie3);
 
 //8. Conditional operators: if
 //if, else if, else

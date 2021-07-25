@@ -1,0 +1,62 @@
+1. variable
+null은 안에 확실히 없는 것
+undefined는 안에 무엇이 있는 지 모르는 것
+----
+백틱(`)
+`~문자~ ${변수}`
+----
+symbol의 역할: 고유한 식별자를 부여하기 위해서
+똑같은 string이지만 다른 식별자로 인식한다.
+이를 같게 하기위해서는
+Symbol.for을 사용
+----
+2. operator
+== loose equality, 타입이 상관없다
+=== strict equality, 타입까지 신경써서 비교한다
+----
+while과 do while의 차이는
+while은 시작할 때 조건을 확인하고
+do while은 마지막에 조건을 확인한다
+----
+3. function
+기저 사례 조건을 제일 먼저 작성하는 것이 좋다
+----
+default parameter = 파라미터가 들어오지 않았을 때
+파라미터에 default값을 넣어두는 것
+ex)
+function showMessage(message, from = 'unknown'){
+..
+}
+이럴 경우 from 값이 들어오지 않으면 default값인 unknown이 들어가게 된다
+----
+rest parameter = 배열 형태의 파라미터를 받는다
+ex)
+function printAll(..args){
+...
+}
+...args는 ...을 통해 args라는 배열에 파라미터로 받아온 값들을 넣어서
+함수를 실행시킨다는 뜻이다
+----
+function은 선언하면 hoisting이 되어 선언되기 전에
+미리 call할 수 있다.
+----
+first-class function
+변수에 함수를 할당한다.
+❓❓
+hoisting 되지 않는다.
+콜백은 가능하다.
+----
+Arrow function
+:first-class function, anonymous function
+const add = function (a, b){
+    return a + b;
+}
+const add = (a, b) => a + b;
+변수 선언 = (매개변수) => 리턴 값;
+리턴하기 위한 body 부분이 길어질 때
+{}을 써서 body를 아래와 같이 구현한다.
+
+const simpleMultiply = (a, b) => {
+    // do something more
+    return a * b;
+};

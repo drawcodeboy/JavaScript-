@@ -120,7 +120,7 @@ const sumAgain = sum;
 console.log(sumAgain(1, 3));
 
 // 2. Callback function using function expression
-function randomQuiz(answer, printYes, printNo){
+function randomQuiz(answer){
     if (answer === 'love you'){
         printYes();
     }
@@ -138,8 +138,8 @@ const printNo = function print() { //named function
 // better debugging in debugger's stack traces
 // recursions(재귀 호출)
 
-randomQuiz('wrong', printYes, printNo);
-randomQuiz('love you', printYes, printNo);
+randomQuiz('wrong');
+randomQuiz('love you');
 
 // Arrow function
 // always anonymous >> anonymous function만 가능하다
@@ -167,3 +167,17 @@ const simpleMultiply = (a, b) => {
 (function hello() {
     console.log('IIFE');
 })();
+
+//일반 function과 first-class function의 차이를 확인하기 위해
+printThis();
+
+function printThis(){
+    console.log(`this`);
+}
+//this를 출력함
+printThis2();
+
+const printThis2 = function(){
+    console.log('this');
+}
+//this를 출력하지 않음
