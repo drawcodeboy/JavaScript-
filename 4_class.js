@@ -33,12 +33,15 @@ class User{
         this.lastName = lastName;
         this.age = age;
     }
-
+    // 설정에 해당하는 값을 받아오는 2번째
     get age(){
+        //age라는 프로퍼티는 다음 리턴값을 반환한다
         return this._age;
     }
-
-    set age(value){
+    // 설정을 첫 번째
+    set age(value){// this.age의 초기 설정을 한다.
+        // age라는 프로퍼티에 age라는 value를 받아온다
+        // 
         if (value < 0){
             throw Error('age can not be negative');
         }
@@ -46,7 +49,7 @@ class User{
     }
 }
 
-const user1 = new User('Steve','Job',25);
+const user1 = new User('Steve','Job',3);
 console.log(user1.age);
 
 // 3. Fields(public, private)

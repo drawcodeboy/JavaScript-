@@ -28,6 +28,7 @@ for(let fruit of fruits){
 
 // c. forEach
 fruits.forEach((fruit) => console.log(fruit));
+
 // 4. Additon, deletion, copy
 
 // push: add an item to the end
@@ -46,6 +47,7 @@ fruits.shift();
 console.log(fruits);
 
 // shift, unshift are slower than pop, push
+console.log(`--------------------`);
 // splice: remove an item by index position
 fruits.splice(1, 1);
 //원하는 개수를 지정하지 않으면 지정한 index부터 다 지워버린다
@@ -61,7 +63,6 @@ console.log(newFruits);
 
 // 5. Searching
 // indexOf: find the index
-console.clear();
 console.log(fruits);
 console.log(fruits.indexOf('🍎'));
 
@@ -69,7 +70,6 @@ console.log(fruits.indexOf('🍎'));
 console.log(fruits.includes('🍎'));
 
 // lastIndexOf
-console.clear();
 fruits.push('🍎');
 console.log(fruits);
 console.log(fruits.indexOf('🍎'));

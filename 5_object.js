@@ -15,7 +15,7 @@ function print(name,age){
     console.log(age);
 }
 //오브젝트를 이용하면 아래와 같이 수월해진다.
-const ellie = {name: 'ellie', age: 4};
+const ellie = {name: 'ellie', age: 5};
 function print2(person){
     console.log(person.name);
     console.log(person.age);
@@ -49,12 +49,15 @@ console.log(ellie['name']);//배열처럼 접근이 가능, computed properties
 ellie2['hasJob'] = true;
 console.log(ellie2.hasJob);
 
+console.log(`-----------------------`);
+
 // computed properties는 이럴 때 쓴다
 function printValue(obj, key){
     console.log(obj[key]);
     //이렇게 하면 실시간으로 어떤 key를 받아오는지에 대해 받아서 obj안에 해당하는 property의 값을 반환한다.
     //console.log(obj.key);는
     //obj 안에 key라는 property를 찾는 것이다.
+    //여기선 배열처럼 생각하면 편하다.
 }
 //key는 항상 string type으로
 printValue(ellie, 'name');
@@ -82,6 +85,7 @@ function Person(name, age){
     this.age = age;
     // return this;
 }
+//class랑 다를 게 뭐지?
 
 // 5. in operator: property existence check (key in obj)
 //오브젝트 안에 키의 유무를 확인
@@ -91,7 +95,6 @@ console.log(ellie.random);
 
 // 6. for..in vs for..of
 // for (key in obj)
-console.clear();
 for (let key in ellie2){
     console.log(key);
 }
