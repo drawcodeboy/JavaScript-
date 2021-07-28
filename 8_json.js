@@ -29,6 +29,9 @@
 //the network the network connection
 //independent programming language and platform
 
+//json은 브라우저 뿐만 아니라 모바일에서 서버와 데이터를 주고받을 때
+//혹은 서버와 통신하지 않아도 파일시스템에 저장 할 때도 json이 많이 쓰인다
+
 //object를 어떻게 string으로 serialize를 하는가
 //serialize된 json을 어떻게 deserialize를 통해 object로 변환할 것인지
 
