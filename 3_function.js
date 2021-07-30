@@ -120,7 +120,7 @@ const sumAgain = sum;
 console.log(sumAgain(1, 3));
 
 // 2. Callback function using function expression
-function randomQuiz(answer){
+function randomQuiz(answer, printYes, printNo){
     if (answer === 'love you'){
         printYes();
     }

@@ -60,14 +60,14 @@ const password = prompt('enter your password');
 userStorage.loginUser(
     id,
     password, 
-    (user) =>{
+    (user) =>{// onSuccess를 통해 id라는 매개변수는 user이다.
         userStorage.getRoles(
             user,
             userWithRole => {
                 alert(`hello ${userWithRole.name}, you have a ${userWithRole.role} role`);
             },
             error => {
-                console.log(error)
+                alert(error);
             }
         );
     },
