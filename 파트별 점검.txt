@@ -166,3 +166,57 @@ temp가 array라는 배열의 몇 번째 인덱스에 있는가
 +lastindexOf: temp는 배열의 인덱스 중에 마지막으로 속한 인덱스 몇 번인가
 array.includes('temp');
 array라는 배열에 temp라는 인덱스가 있는가 (boolean)
+----
+[7. array api]
+----
+api에 대해 블로그에서 정리해두었지만
+https://draw-code-boy.tistory.com/7
+여기서 다시 한 번 array api에 대해 정리해보자면
+자바스크립트 내부에 array라는 obj가 선언되어있고
+이를 통해 우리는 배열을 선언한다.
+배열이라는 오브젝트 안에 선언된 메서드(method)를 사용함으로써
+이를 array를 만드는데 도와주는 api라고 할 수 있다.
+----
+.join(): 배열 >> 스트링
+.split(): 구분자(seperator)를 통해 스프링 >> 배열
+.reverse(): 뒤집기
+.slice(): ~부터 ~까지 자르겠다
+.find(): 콜백함수를 통해 조건을 만족한 element를 리턴
+.filter(): 콜백함수를 통해 조건을 만족한 element들을 모아 배열을 만듬
+.map(): 콜백함수를 통해 해당하는 값으로 배열을 만듬
+.some(): 하나라도 만족하는 것이 있는지 확인
+.every(): 모두 만족하는지 확인
+.reduce(): 값들을 누적하는 api
+.sort(): 정렬
+----
+[8. JSON]
+----
+오브젝트(데이터)를 서버로 보내거나
+서버에서 오브젝트(데이터)를 받아올 때 사용
+----
+JSON.stringify();
+>>json을 통해 서버로 오브젝트를 보내겠다.
+함수(method)를 stringify 하는 방법은 무엇인가
+----
+JSON.parse();
+>>json을 통해서 서버에서 오브젝트를 받아오겠다.
+optional function(callback)을 통해 key를 만났을 때
+다시금 object를 선언해서 parsing 할 수 있다.
+>>ex)
+new Date();
+----
+[9. callback]
+----
+자바스크립트는 synchronous한 언어이다.
+동기적인 언어라는 뜻이다.
+코드를 작성함에 따라 즉각적으로 처리가 된다.
+console.log를 통해 확인할 수 있다.
+----
+async는 비동기처리를 의미한다.
+자바스크립트의 특징처럼 동기적인 처리가 아닌
+비동기적으로 처리하겠다는 의미이다.
+그 예시로
+setTimeout을 통해 일부러 delay를 주어서
+console.log를 통해 확인 할 수 있다.
+----
+[10. promise]

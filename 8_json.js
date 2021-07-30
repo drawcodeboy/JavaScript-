@@ -64,12 +64,13 @@ const rabbit = {
 
 json = JSON.stringify(rabbit);
 console.log(json);
+// method가 전달되지 않는다.
 
 json = JSON.stringify(rabbit, ["name"]);
 console.log(json);
 
-json = JSON.stringify(rabbit, (key, value) => {
-    console.log(`key: ${key}, value: ${value}`);
+json = JSON.stringify(rabbit, (key, value) => {//stringify의 optional function
+    console.log(`key: ${key}, value: ${value}`);//어떤 key와 value가 들어가고 있는 지 확인
     return key === 'name' ? 'ellie' : value;
     // key가 name을 만나면 ellie를 집어넣도록 한다.
 });
@@ -77,18 +78,21 @@ console.log(json);
 
 // 2. JSON to object
 // parse(json)
+// parse를 통해 오브젝트 데이터 포맷을 받아온다.
 
-console.clear();
+console.log(`---------------`);
+//console.clear();
 json = JSON.stringify(rabbit);
 console.log(json);
 
 const obj = JSON.parse(json, (key, value) => {
     console.log(`key: ${key}, value: ${value}`);
+    
     return key === 'birthDate' ? new Date(value) : value;
 });
 console.log(obj);
 
-rabbit.jump(); // arrow function으로 선언해서 this가 가리키는 전역객체가 되어 이름이 나타나지 않았다.
+rabbit.jump(); // arrow function으로 선언해서 this가 가리키는 곳이 전역객체가 되어 이름이 나타나지 않았다.
 
 rabbit.jump2();
 //obj.jump2();
@@ -105,6 +109,8 @@ console.log(obj.birthDate.getDate());
 // JSON의 parse 메소드에 optional의 콜백함수로 key가 birthDate를
 // 만나게 되었을 때 new Date로 다시 birthDate를 잡도록
 // request한다.
+
+// 함수(method)를 stringify해야 할 땐 어떻게 해야 할까
 
 /**
  * JSON Diff checker: http://www.jsondiff.com/
