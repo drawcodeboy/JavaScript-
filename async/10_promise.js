@@ -9,6 +9,8 @@
 // 완벽하게 수행을 하면 fulfilled 상태
 // 파일을 찾을 수 없거나 네트워크에 문제가 생긴다면 rejected
 // Producer vs Consumer
+// 사용하는 경우
+// 할 일의 용량이 커서 비동기적으로 처리를 해야 할 때
 
 // 
 
@@ -18,7 +20,7 @@
 // executor(resolve, reject)가 바로 작동하기 때문이다.
 // 사용자가 버튼을 눌렀을 때 선택적으로 통신이 일어나게 하려면
 // 
-const promise = new Promise((resolve, reject) => {
+const promise = new Promise((resolve, reject) => { // executor라는 callback함수
     // doing some heavy work (network, read files)
     // >> 비동기적으로 받아오는 것이 좋다.
     console.log(`doing something...`);
@@ -83,15 +85,21 @@ fetchNumber
 // 4. Error Handling
 const getHen = () => 
     new Promise((resolve, reject) => {
-        setTimeout(() => resolve(`🐔`), 1000);
+        setTimeout(() => {
+            console.log(`getHen server passed`);
+            resolve(`🐔`)}, 1000);
     });
 const getEgg = hen =>
     new Promise((resolve, reject) => {
-        setTimeout(() => reject(new Error(`error! ${hen} => 🥚`)), 1000);
+        setTimeout(() => {
+            console.log(`getEgg server passed`);
+            resolve(` ${hen} => 🥚`)}, 1000);
     });
 const cook = egg =>
     new Promise((resolve, reject) => {
-        setTimeout(() => resolve(`${egg} => 🍳`), 1000);
+        setTimeout(() => {
+            console.log(`cook server passed`)
+            resolve(`${egg} => 🍳`)}, 1000);
     });
 
 getHen()

@@ -254,3 +254,15 @@ Producer vs Consumer
 Producer: 데이터를 가공하는 템플릿
 Consumer: Producer로부터 나온 데이터를 사용하여
 원하는 결과를 얻어낸다
+----
+[11.async]
+----
+콜백에서 프로미스
+프로미스에서 async로
+더 간단하게 표현할 수 있다.
+----
+컨슈머의 입장에서 .then .catch 등
+비동기로 실행된 함수들의 결과를 토대로 .then이나 .catch를 실행하면
+컨슈머는 가독성이 떨어지게 된다.
+즉, async function을 선언하고, 받아오는 값을
+await으로 받아준다.
